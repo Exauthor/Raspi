@@ -5,20 +5,26 @@
 
 <script>
 import * as d3 from 'd3';
+import axios from 'axios';
 
 export default {
   methods: {
-    initPieChart() {
+    async getTemperature() {
+      let apiTemp = await axios.get('/api/temperature');
+      return apiTemp.data.temperature;
+    },
+    async initPieChart() {
       let width = document.documentElement.clientWidth * .4,
           height = document.documentElement.clientHeight * .4,
           radius = Math.min(width, height) / 2,
           range = d3.scaleLinear().domain([0, 100]).range([17, 100]),
-          percent = 50,
+          percent = await this.getTemperature(),
           svg = d3.select('main').append('svg')
             .attr('width', width)
             .attr('height', height)
             .append('g')
             .attr('transform', `translate(${width / 2}, ${height / 2})`);
+
 
       let group = svg.append('g').attr( 'style', 'transform: rotate(150deg)');
 
@@ -73,23 +79,23 @@ export default {
         });
       };
 
-      let animate = function() {
+      let that = this;
+      let animate = async function() {
           path.transition()
             .duration(800)
             .ease(d3.easeLinear)
             .call(animation, percent, oldValue);
        
           oldValue = percent;
-          percent = (Math.random() * 80) + 20;
-          setTimeout(animate, 1200);
+          percent = await that.getTemperature();
+          setTimeout(await animate, 1200);
       };
  
-      animate();
+      await animate();
     },
   },
   mounted() {
     this.initPieChart();
-    console.log('Mounted');
   }
 }
 </script>
