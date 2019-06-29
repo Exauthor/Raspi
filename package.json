@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "iot": "cross-env API_DATA=gpio NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production node server/index.js",
     "generate": "nuxt generate"
@@ -16,7 +17,7 @@
     "cross-env": "^5.2.0",
     "d3": "^5.9.2",
     "express": "^4.16.4",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.4.0",
     "pug": "2.0.3",
     "pug-plain-loader": "^1.0.0",
     "stylus": "^0.54.5",
