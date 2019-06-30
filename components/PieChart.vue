@@ -1,5 +1,5 @@
 <template lang="pug">
-  svg.pie-chart(ref='svgPie')
+  svg.block-info.pie-chart(ref='svgPie')
 </template>
 
 <script>
@@ -25,15 +25,12 @@ export default {
       let apiData = await axios.get(request);
 
       if (this.option === 'memory') {
-        console.log('MEMORY', apiData.data.percentMemory)
         this.percent = 100 - apiData.data.percentMemory;
       } else {
-        console.log('temperature', apiData.data.temperature)
         this.percent = apiData.data.temperature;
       }
 
       this.data = apiData.data;
-      console.log('temperature', this.data)
     },
     async getTemperature() {
       let apiTemp = await axios.get('/api/temperature');
@@ -150,7 +147,4 @@ export default {
 </script>
 
 <style lang="stylus">
-svg.pie-chart
-  background rgba(0,0,0,.7)
-  border-radius 20px
 </style>
