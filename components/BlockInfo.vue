@@ -42,10 +42,9 @@ export default {
     },
     checkClick() {
       if (this.option === 'cooler') {
-        //title = 'Active';
-      } else if (this.option === 'thermometer') {
-        console.log('Temp')
-      } else {
+        //Add cooler function
+        //axios.get('/api/cooler-up');
+      } else if (this.option === 'memory') {
         axios.get('/api/cpu-up');
       }
     },
@@ -58,21 +57,14 @@ export default {
         title = 'Active';
       } else if (this.option === 'thermometer') {
         title = 'Temperature';
-      } else {
+      } else if (this.option === 'cpu-up') {
         title = 'Boot';
       }
 
+      console.log(this.option, this.option === 'memory');
+
       return title;
     },
-    //subTitle: {
-      //get() {
-        //return this.option;
-      //},
-      //set(value) {
-        //console.log('value', value)
-        //return value;
-      //}
-    //}
   },
 }
 </script>
@@ -89,7 +81,7 @@ export default {
 
 .block-info--no-active
   * 
-    opacity .7
+    opacity .6
 
 .text--dark
   opacity .7

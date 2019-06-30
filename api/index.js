@@ -23,7 +23,7 @@ app.get('/external_temperature', (req, res) => {
   let temperature;
   
   if (!!process.env.API_DATA) {
-    temperature = execSync('sudo python2 GPIO/bme280.py | awk \'/Tem/{printf($3)}\'').toString('utf8');
+    temperature = execSync('sudo python2 ../assets/bme280.py | awk \'/Tem/{printf($3)}\'').toString('utf8');
   } else {
     temperature = parseInt(Math.random() * 20 + 10);
   }
