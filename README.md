@@ -1,22 +1,10 @@
-# IoT
+# RIOT
 
-> IoT raspi
+### Project for Raspberry Pi to make IoT.
 
-## Build Setup
-
-``` bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn run dev
-
-# build for production and launch server
-$ yarn run build
-$ yarn start
-
-# generate static project
-$ yarn run generate
+### To start:
+``` sh
+yarn && yarn dev
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+![RIOT](https://user-images.githubusercontent.com/33872448/73614966-25c2c380-4615-11ea-8d9b-4c2440e646ce.png)
