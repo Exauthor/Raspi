@@ -11,3 +11,21 @@ circle(n)
   width n
   height n
   border-radius 50%
+
+mobile()
+  @media (max-width: 600px)
+    {block}
+
+tablet()
+  @media (max-width: 960px)
+    {block}
+
+tablet-lg()
+  @media (max-width: 1265px)
+    {block}
+
+em($v, $delimeter = 16)
+  return 1em * $v / ($delimeter)
+
+rem($v, $delimeter = 16)
+  return 1rem * $v / ($delimeter)

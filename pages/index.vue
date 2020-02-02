@@ -27,26 +27,8 @@ export default {
 </script>
 
 <style lang='stylus'>
-h3
-  font-size 1.7rem  
-  margin 10px
-  text-align center
-
-.blocks-info
-  display flex
-  flex-wrap wrap
-  width calc(100vmin + 10px)
-  margin 10px auto
-  & > *:nth-child(2n)
-    margin-right 0
-  & > *
-    margin-right 10px
-    margin-bottom 10px
 
 .block-info
   background rgba(0,0,0,.7)
   border-radius 20px
-
-*
-  box-sizing border-box
 </style>

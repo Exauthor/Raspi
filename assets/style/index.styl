@@ -1,5 +1,6 @@
 @import './mixins.styl'
 @import './fonts.styl'
+@import './block.styl'
 
 section
   position relative
@@ -25,15 +26,11 @@ html
   margin 0
   font forText
 
-//.about-me_buttons
-  //font forText
-
 :root
   --color-second #ff1c76
   --color-active #04ded4
   --color-bg #19102E
   --color-green #91e60a
-  --size-article-block 50vmin 
   --count-article-block 3 
   --text-font forText
 
@@ -72,6 +69,11 @@ h2
     border-radius 2px
     filter drop-shadow(0 0 3px var(--color-active))
 
+h3
+  font-size 1.7rem  
+  margin 10px
+  text-align center
+
 a
   text-decoration none
   color inherit
@@ -83,7 +85,6 @@ a
   transform translate(-50%, -50%)
 
 .wrapper
-  width calc(var(--size-article-block) * 3)
   margin 0 auto
 
 .router-anim-enter-active
@@ -135,5 +136,3 @@ a
     transform: translateX(0)
   }
 }
-
-@import './adaptive.styl'

@@ -1,0 +1,38 @@
+.blocks-info
+  display flex
+  flex-wrap wrap
+  width calc(100vmin + 10px)
+  margin 10px auto
+  +mobile() {
+    border-radius 5px
+  }
+  & > *:nth-child(2n)
+    margin-right 0
+  & > *
+    margin-right 10px
+    margin-bottom 10px
+
+.block-info__title
+  display flex
+  width calc(25vmin - 5px)
+  align-items center
+  height 12.5vmin
+  padding 0 10px
+  h4
+    margin-left 10px
+  +mobile() {
+    width calc(50vmin - 5px)
+  }
+
+.block-info--no-active
+  * 
+    opacity .6
+
+.text--dark
+  opacity .7
+  font-size 1rem
+  display block
+
+.block-info__icon
+  width 8vmin
+  height 8vmin

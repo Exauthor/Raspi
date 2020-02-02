@@ -1,6 +1,8 @@
 <template lang="pug">
-  .block-info.block-info__title(:class='{"block-info--no-active": option === "cooler"}'
-                                @click='checkClick')
+  .block-info.block-info__title(
+    :class='{"block-info--no-active": option === "cooler"}'
+    @click='handleClick'
+  )
     SystemIcons.block-info__icon(:name='option')
     h4 {{title}} #[span.text--dark {{subTitle}}]
 </template>
@@ -40,7 +42,7 @@ export default {
 
       this.subTitle = `${(temperature > 0) ? '+' : '-'}${temperature}C°`;
     },
-    checkClick() {
+    handleClick() {
       if (this.option === 'cooler') {
         //Add cooler function
         //axios.get('/api/cooler-up');
@@ -69,26 +71,4 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-.block-info__title
-  display flex
-  width calc(25vmin - 5px)
-  align-items center
-  height 12.5vmin
-  padding 0 10px
-  h4
-    margin-left 10px
-
-.block-info--no-active
-  * 
-    opacity .6
-
-.text--dark
-  opacity .7
-  font-size 1rem
-  display block
-
-.block-info__icon
-  width 8vmin
-  height 8vmin
-</style>
+<style lang="stylus"></style>
